@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - TriTime</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Camada escura sobre a imagem -->
+  <div class="overlay"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="img/logo.png" alt="TriTime Logo">
+    </div>
+    <nav class="menu">
+      <a href="#">Home</a>
+      <a href="#">About us</a>
+    </nav>
+    <a href="cadastro.html" class="link-header">Sign Up</a>
+  </header>
+
+  <!-- Caixa de Login -->
+  <div class="form-box">
+    <h2 class="form-title">Log in</h2>
+    <form>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="input-group">
+        <label for="senha">Password</label>
+        <div class="password-field">
+          <input type="password" id="senha" placeholder="8+ characters" minlength="8" required>
+          <span class="toggle-password" onclick="togglePassword()">👁</span>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primary">Log in</button>
+    </form>
+    <p class="form-footer">Do not have an account? <a href="cadastro.html">Sign Up</a></p>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const password = document.getElementById("senha");
+      password.type = password.type === "password" ? "text" : "password";
+    }
+  </script>
+</body>
+</html>
