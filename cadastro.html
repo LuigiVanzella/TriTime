@@ -78,11 +78,11 @@
       <div class="input-row">
         <div class="input-group small">
           <label for="altura">Altura (Cm)</label>
-          <input type="number" id="altura" placeholder="Ex.: 180" required>
+          <input type="number" id="altura" placeholder="Ex.: 180" maxlength="3" required>
         </div>
         <div class="input-group small">
           <label for="peso">Peso (Kg)</label>
-          <input type="number" id="peso" placeholder="Ex.: 70" required>
+          <input type="number" id="peso" placeholder="Ex.: 70" maxlength="3" required>
         </div>
       </div>
 
@@ -115,10 +115,27 @@
       <button type="submit" class="btn-primary">Criar Conta</button>
 
     </form>
-    <p class="form-footer">Already have an account? <a href="login.html">Log In</a></p>
+    <p class="form-footer">Você já tem uma conta? <a href="login.html">Entre aqui</a></p>
   </div>
 
   <script>
+    //verificacao peso e altura
+    // Limita altura e peso a 3 dígitos
+    function limitarDigitos(input) {
+      input.addEventListener("input", function () {
+        const valor = this.value;
+
+        if (valor.length > 3) {
+          this.value = valor.slice(0, 3);
+        } 
+      });
+    }
+
+  // Aplica nos campos específicos
+  limitarDigitos(document.getElementById("altura"));
+  limitarDigitos(document.getElementById("peso"));
+
+
   // Função para validar CPF
   function TestaCPF(strCPF) {
     var Soma;
