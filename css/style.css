@@ -125,6 +125,11 @@ input, select, textarea {
     font-size: 16px;
     transition: all 0.3s ease;
 }
+
+.input-error {
+  border: 10px solid red;
+  background-color: #faa1a1;
+}
 /* Aparência padrão */
 select {
   width: 100%;

@@ -104,25 +104,79 @@
         </div>
       </div>
 
-      <button type="button" class="btn-primary">Criar Conta</button>
+      <div class="input-group">
+        <label for="senhaRepetida">Repita a Senha</label>
+        <div class="password-field">
+          <input type="password" id="senhaRepetida" placeholder="8+ characters" minlength="8" required>
+          <span class="toggle-password" onclick="togglePassword()">👁</span>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primary">Criar Conta</button>
 
     </form>
     <p class="form-footer">Already have an account? <a href="login.html">Log In</a></p>
   </div>
 
   <script>
-    // Verificando CPF
-    document.getElementById("cpf").addEventListener("input", function(e) {
-    let value = e.target.value.replace(/\D/g, ""); // remove tudo que não é número
-    value = value.replace(/(\d{3})(\d)/, "$1.$2"); // coloca o primeiro ponto
-    value = value.replace(/(\d{3})(\d)/, "$1.$2"); // coloca o segundo ponto
-    value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2"); // coloca o traço
-    e.target.value = value;
-  });
-    function togglePassword() {
-      const password = document.getElementById("senha");
-      password.type = password.type === "password" ? "text" : "password";
+  // Função para validar CPF
+  function TestaCPF(strCPF) {
+    var Soma;
+    var Resto;
+    Soma = 0;
+    strCPF = strCPF.replace(/\D/g, "");
+
+    if (strCPF.length !== 11 || /^(\d)\1+$/.test(strCPF)) return false;
+
+    for (let i = 1; i <= 9; i++) {
+      Soma += parseInt(strCPF.substring(i - 1, i)) * (11 - i);
     }
-  </script>
+    Resto = (Soma * 10) % 11;
+    if (Resto === 10 || Resto === 11) Resto = 0;
+    if (Resto !== parseInt(strCPF.substring(9, 10))) return false;
+
+    Soma = 0;
+    for (let i = 1; i <= 10; i++) {
+      Soma += parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+    }
+    Resto = (Soma * 10) % 11;
+    if (Resto === 10 || Resto === 11) Resto = 0;
+    if (Resto !== parseInt(strCPF.substring(10, 11))) return false;
+
+    return true;
+  }
+
+  // Formata o CPF enquanto digita
+  document.getElementById("cpf").addEventListener("input", function (e) {
+    let value = e.target.value.replace(/\D/g, "");
+    value = value.replace(/(\d{3})(\d)/, "$1.$2");
+    value = value.replace(/(\d{3})(\d)/, "$1.$2");
+    value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+    e.target.value = value;
+
+    // Remove erro visual ao digitar
+    e.target.classList.remove("input-error");
+  });
+
+  // Valida CPF ao enviar
+  document.querySelector("form").addEventListener("submit", function (e) {
+    const cpfInput = document.getElementById("cpf");
+    const cpf = cpfInput.value;
+
+    if (!TestaCPF(cpf)) {
+      e.preventDefault();
+      cpfInput.classList.add("input-error");
+    }
+  });
+
+
+  // Alternar visibilidade da senha
+  function togglePassword() {
+    const passwordFields = document.querySelectorAll(".password-field input");
+    passwordFields.forEach(field => {
+      field.type = field.type === "password" ? "text" : "password";
+    });
+  }
+</script>
 </body>
 </html>
