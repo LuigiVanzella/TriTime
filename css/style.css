@@ -57,12 +57,11 @@ body {
       transition: transform 0.3s ease, color 0.3s ease;
     }
 
-    .menu a:hover, .link-header a:hover {
-      transform: scale(1.2);
-      color: #00d4ff;
-    }
+.menu a:hover, .link-header a:hover {
+  color: #00d4ff;
+}
 
-.menu a, .link-header {
+.menu , .link-header {
   text-decoration: none;
   color: #fff;
   font-weight: 500;
@@ -198,22 +197,23 @@ textarea:focus {
 
 /* ---------- BOTÃO ---------- */
 .btn-primary {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
+  padding: 10px 50px;
+  font-size: 1.2rem;
+  border-radius: 8px;
   border: none;
-  border-radius: 6px;
+  background: linear-gradient(135deg, #007bff, #00d4ff);
   color: #fff;
-  font-size: 16px;
   font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
-  transition: 0.3s;
+  display: inline-block;
 }
 
 .btn-primary:hover {
-  background-color: #e65c00;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
 }
-
 /* ---------- RODAPÉ DO FORM ---------- */
 .form-footer {
   margin-top: 15px;
