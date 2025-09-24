@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TriTime - Simulações</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      min-height: 100vh;
+      background: url('img/Largada.jpg') no-repeat center center/cover;
+      margin: 0;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.75);
+      z-index: 0;
+    }
+
+    .dashboard {
+      position: relative;
+      z-index: 2;
+      padding: 40px 10%;
+    }
+
+    /* Header do usuário */
+    .user-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .user-header h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .user-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #ccc url('img/user-placeholder.png') no-repeat center/cover;
+      cursor: pointer;
+      border: 2px solid #00d4ff;
+    }
+
+    /* Área de simulações */
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .card {
+      background: #fff;
+      color: #000;
+      border-radius: 12px;
+      padding: 20px;
+      width: 240px;
+      height: 300px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      cursor: pointer;
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+    }
+
+    /* Carta para adicionar simulação */
+    .card.add {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border: 2px dashed #00d4ff;
+      color: #00d4ff;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .card.add:hover {
+      background: rgba(0,212,255,0.1);
+    }
+
+    /* Conteúdo da carta de simulação */
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: #007bff;
+    }
+
+    .card p {
+      font-size: 1rem;
+      margin: 6px 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="dashboard">
+    <!-- Cabeçalho com título e usuário -->
+    <div class="user-header">
+      <h1>Simulações</h1>
+      <div class="user-avatar"></div>
+    </div>
+
+    <!-- Cartas de simulação -->
+    <div class="cards-container">
+      <!-- Carta para adicionar nova simulação -->
+      <div class="card add" onclick="location.href='novaSimulacao.html'">
+        +
+      </div>
+
+      <!-- Exemplo de simulação existente -->
+      <div class="card" onclick="location.href='detalhesSimulacao.html'">
+        <h3>Simulação 1</h3>
+        <p><strong>Tempo total:</strong> 2h 35min</p>
+        <p>Natação: 28min</p>
+        <p>Ciclismo: 1h 20min</p>
+        <p>Corrida: 47min</p>
+      </div>
+
+      <div class="card" onclick="location.href='detalhesSimulacao.html'">
+        <h3>Simulação 2</h3>
+        <p><strong>Tempo total:</strong> 3h 05min</p>
+        <p>Natação: 32min</p>
+        <p>Ciclismo: 1h 35min</p>
+        <p>Corrida: 58min</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
