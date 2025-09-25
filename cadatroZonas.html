@@ -148,117 +148,72 @@
     <h1 style="color: #fff;">Zonas de Intensidade</h1>
     <h2 class="subtitle"><span><strong>Importante:</strong></span> informe sempre o <span><strong>Limite Mais Rápido</strong></span> de cada Zona!</h2>
 
-    <form>
+    <form id="zonesForm">
       <div class="zone-container">
         <!-- Natação -->
         <div class="zone-card">
           <h2>Natação</h2>
-          <h4>Minutos e Segundos (por 100m)<br>Ex: Z1 - (2:00 – 1:50) → Insira 1:50</h4>
-
-          <div class="zone-row"><label>Z1 -</label>
-            <div class="zone-inputs">
-                <input type="number" placeholder="Min"> <span>:</span> <input type="number" placeholder="Seg">
-            </div>
-          </div>
-
-          <div class="zone-row"><label>Z2 -</label>
-            <div class="zone-inputs">
-                <input type="number" placeholder="Min"> <span>:</span> <input type="number" placeholder="Seg">
-            </div>
-          </div>
-
-          <div class="zone-row"><label>Z3 -</label>
-            <div class="zone-inputs">
-                <input type="number" placeholder="Min"> <span>:</span> <input type="number" placeholder="Seg">
-            </div>
-          </div>
-          
-          <div class="zone-row"><label>Z4 -</label>
-            <div class="zone-inputs">
-                <input type="number" placeholder="Min"> <span>:</span> <input type="number" placeholder="Seg">
-            </div>
-          </div>
-
-          <div class="zone-row"><label>Z5 -</label>
-            <div class="zone-inputs">
-                <input type="number" placeholder="Min"> <span>:</span> <input type="number" placeholder="Seg">
-            </div>
-          </div>
-
+          <h4>Minutos e Segundos (por 100m)</h4>
+          <!-- Z1 a Z5 inputs aqui, igual seu código atual -->
+          <div class="zone-row"><label>Z1 -</label><div class="zone-inputs"><input type="number" id="swimZ1Min" placeholder="Min" min="0"><span>:</span><input type="number" id="swimZ1Sec" placeholder="Seg" min="0" max="59"></div></div>
+          <div class="zone-row"><label>Z2 -</label><div class="zone-inputs"><input type="number" id="swimZ2Min" placeholder="Min" min="0"><span>:</span><input type="number" id="swimZ2Sec" placeholder="Seg" min="0" max="59"></div></div>
+          <div class="zone-row"><label>Z3 -</label><div class="zone-inputs"><input type="number" id="swimZ3Min" placeholder="Min" min="0"><span>:</span><input type="number" id="swimZ3Sec" placeholder="Seg" min="0" max="59"></div></div>
+          <div class="zone-row"><label>Z4 -</label><div class="zone-inputs"><input type="number" id="swimZ4Min" placeholder="Min" min="0"><span>:</span><input type="number" id="swimZ4Sec" placeholder="Seg" min="0" max="59"></div></div>
+          <div class="zone-row"><label>Z5 -</label><div class="zone-inputs"><input type="number" id="swimZ5Min" placeholder="Min" min="0"><span>:</span><input type="number" id="swimZ5Sec" placeholder="Seg" min="0" max="59"></div></div>
         </div>
 
         <!-- Ciclismo -->
         <div class="zone-card">
-          <h2>Ciclismo</h2>
-          <h4>Quilômetros por hora (Km/h)<br>Ex: Z3 - (34–38km/h) → Insira 38</h4>
-          <div class="zone-row"><label>Z1 -</label>
-            <div class="zone-inputs-cycle">
-                <input type="number" placeholder="Km/h">
-            </div>
-          </div>
+        <h2>Ciclismo</h2>
+        <h4>Km/h</h4>
 
-          <div class="zone-row"><label>Z2 -</label>
-            <div class="zone-inputs-cycle">
-                <input type="number" placeholder="Km/h">
-            </div>
+        <div class="zone-row">
+          <label>Z1 -</label>
+          <div class="zone-inputs-cycle">
+            <input type="number" id="bikeZ1" placeholder="Km/h" min="0">
           </div>
-
-          <div class="zone-row"><label>Z3 -</label>
-            <div class="zone-inputs-cycle">
-                <input type="number" placeholder="Km/h">
-            </div>
-          </div>
-
-          <div class="zone-row"><label>Z4 -</label>
-            <div class="zone-inputs-cycle">
-                <input type="number" placeholder="Km/h">
-            </div>
-          </div>
-
-          <div class="zone-row"><label>Z5 -</label>
-            <div class="zone-inputs-cycle">
-                <input type="number" placeholder="Km/h">
-            </div>
-          </div>
-            
-          
         </div>
+
+        <div class="zone-row">
+          <label>Z2 -</label>
+          <div class="zone-inputs-cycle">
+            <input type="number" id="bikeZ2" placeholder="Km/h" min="0">
+          </div>
+        </div>
+
+        <div class="zone-row">
+          <label>Z3 -</label>
+          <div class="zone-inputs-cycle">
+            <input type="number" id="bikeZ3" placeholder="Km/h" min="0">
+          </div>
+        </div>
+
+        <div class="zone-row">
+          <label>Z4 -</label>
+          <div class="zone-inputs-cycle">
+            <input type="number" id="bikeZ4" placeholder="Km/h" min="0">
+          </div>
+        </div>
+
+        <div class="zone-row">
+          <label>Z5 -</label>
+          <div class="zone-inputs-cycle">
+            <input type="number" id="bikeZ5" placeholder="Km/h" min="0">
+          </div>
+        </div>
+      </div>
+
 
         <!-- Corrida -->
         <div class="zone-card">
           <h2>Corrida</h2>
-          <h4>Minutos e Segundos (por km)<br>Ex: Z2 - (5:29 – 5:00) → Insira 5:00</h4>
-          <div class="zone-row"><label>Z1 -</label>
-            <div class="zone-inputs">
-                <input type="number" placeholder="Min"> <span>:</span> <input type="number" placeholder="Seg">
-            </div>
-          </div>
-
-          <div class="zone-row"><label>Z2 -</label>
-            <div class="zone-inputs">
-                <input type="number" placeholder="Min"> <span>:</span> <input type="number" placeholder="Seg">
-            </div>
-          </div>
-
-          <div class="zone-row"><label>Z3 -</label>
-            <div class="zone-inputs">
-                <input type="number" placeholder="Min"> <span>:</span> <input type="number" placeholder="Seg">
-            </div>
-          </div>
-
-          <div class="zone-row"><label>Z4 -</label>
-            <div class="zone-inputs">
-                <input type="number" placeholder="Min"> <span>:</span> <input type="number" placeholder="Seg">
-            </div>
-          </div>
-
-          <div class="zone-row"><label>Z5 -</label>
-            <div class="zone-inputs">
-                <input type="number" placeholder="Min"> <span>:</span> <input type="number" placeholder="Seg">
-            </div>
-          </div>
+          <h4>Minutos e Segundos (por km)</h4>
+          <div class="zone-row"><label>Z1 -</label><div class="zone-inputs"><input type="number" id="runZ1Min" placeholder="Min" min="0"><span>:</span><input type="number" id="runZ1Sec" placeholder="Seg" min="0" max="59"></div></div>
+          <div class="zone-row"><label>Z2 -</label><div class="zone-inputs"><input type="number" id="runZ2Min" placeholder="Min" min="0"><span>:</span><input type="number" id="runZ2Sec" placeholder="Seg" min="0" max="59"></div></div>
+          <div class="zone-row"><label>Z3 -</label><div class="zone-inputs"><input type="number" id="runZ3Min" placeholder="Min" min="0"><span>:</span><input type="number" id="runZ3Sec" placeholder="Seg" min="0" max="59"></div></div>
+          <div class="zone-row"><label>Z4 -</label><div class="zone-inputs"><input type="number" id="runZ4Min" placeholder="Min" min="0"><span>:</span><input type="number" id="runZ4Sec" placeholder="Seg" min="0" max="59"></div></div>
+          <div class="zone-row"><label>Z5 -</label><div class="zone-inputs"><input type="number" id="runZ5Min" placeholder="Min" min="0"><span>:</span><input type="number" id="runZ5Sec" placeholder="Seg" min="0" max="59"></div></div>
         </div>
-
       </div>
 
       <button type="submit" class="btn-primary">Inserir Zonas</button>
@@ -275,6 +230,67 @@
       });
     });
   });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("input[type=number]").forEach(input => {
+        input.addEventListener("input", () => {
+          if (input.value.length > 2) input.value = input.value.slice(0, 2);
+        });
+      });
+    });
+
+    // Exemplo: ID do usuário logado, você vai obter dinamicamente no futuro
+    const loggedUserId = 42;
+
+    document.getElementById("zonesForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const data = {
+        user: { id: loggedUserId },
+
+        swimZ1Min: parseInt(document.getElementById("swimZ1Min").value),
+        swimZ1Sec: parseInt(document.getElementById("swimZ1Sec").value),
+        swimZ2Min: parseInt(document.getElementById("swimZ2Min").value),
+        swimZ2Sec: parseInt(document.getElementById("swimZ2Sec").value),
+        swimZ3Min: parseInt(document.getElementById("swimZ3Min").value),
+        swimZ3Sec: parseInt(document.getElementById("swimZ3Sec").value),
+        swimZ4Min: parseInt(document.getElementById("swimZ4Min").value),
+        swimZ4Sec: parseInt(document.getElementById("swimZ4Sec").value),
+        swimZ5Min: parseInt(document.getElementById("swimZ5Min").value),
+        swimZ5Sec: parseInt(document.getElementById("swimZ5Sec").value),
+
+        bikeZ1: parseFloat(document.getElementById("bikeZ1").value),
+        bikeZ2: parseFloat(document.getElementById("bikeZ2").value),
+        bikeZ3: parseFloat(document.getElementById("bikeZ3").value),
+        bikeZ4: parseFloat(document.getElementById("bikeZ4").value),
+        bikeZ5: parseFloat(document.getElementById("bikeZ5").value),
+
+        runZ1Min: parseInt(document.getElementById("runZ1Min").value),
+        runZ1Sec: parseInt(document.getElementById("runZ1Sec").value),
+        runZ2Min: parseInt(document.getElementById("runZ2Min").value),
+        runZ2Sec: parseInt(document.getElementById("runZ2Sec").value),
+        runZ3Min: parseInt(document.getElementById("runZ3Min").value),
+        runZ3Sec: parseInt(document.getElementById("runZ3Sec").value),
+        runZ4Min: parseInt(document.getElementById("runZ4Min").value),
+        runZ4Sec: parseInt(document.getElementById("runZ4Sec").value),
+        runZ5Min: parseInt(document.getElementById("runZ5Min").value),
+        runZ5Sec: parseInt(document.getElementById("runZ5Sec").value)
+      };
+
+      fetch("http://localhost:8080/api/zones", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      })
+      .then(res => {
+        if(!res.ok) throw new Error("Erro ao cadastrar zonas");
+        return res.json();
+      })
+      .then(res => alert("Zonas cadastradas com sucesso!"))
+      .catch(err => alert(err));
+    });
 </script>
 
 </body>
