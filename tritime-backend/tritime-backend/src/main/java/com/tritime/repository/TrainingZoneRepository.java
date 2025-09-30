@@ -1,6 +1,6 @@
 package com.tritime.repository;
 
-import com.tritime.model.zones.TrainingZone;
+import com.tritime.model.TrainingZone;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

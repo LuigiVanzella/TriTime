@@ -1,4 +1,4 @@
-package com.tritime.model.zones;
+package com.tritime.model;
 
 import jakarta.persistence.*;
 import com.tritime.model.User;
@@ -18,31 +18,43 @@ public class TrainingZone {
     // Natação (por 100m, min e seg)
     private Integer swimZ1Min;
     private Integer swimZ1Sec;
+
     private Integer swimZ2Min;
     private Integer swimZ2Sec;
+
     private Integer swimZ3Min;
     private Integer swimZ3Sec;
+    
     private Integer swimZ4Min;
     private Integer swimZ4Sec;
+    
     private Integer swimZ5Min;
     private Integer swimZ5Sec;
 
     // Ciclismo (km/h)
     private Double bikeZ1;
+
     private Double bikeZ2;
+    
     private Double bikeZ3;
+    
     private Double bikeZ4;
+    
     private Double bikeZ5;
 
     // Corrida (por km, min e seg)
     private Integer runZ1Min;
     private Integer runZ1Sec;
+
     private Integer runZ2Min;
     private Integer runZ2Sec;
+
     private Integer runZ3Min;
     private Integer runZ3Sec;
+
     private Integer runZ4Min;
     private Integer runZ4Sec;
+
     private Integer runZ5Min;
     private Integer runZ5Sec;
 

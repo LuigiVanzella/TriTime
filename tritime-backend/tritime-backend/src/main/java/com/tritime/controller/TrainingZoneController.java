@@ -1,6 +1,6 @@
 package com.tritime.controller;
 
-import com.tritime.model.zones.TrainingZone;
+import com.tritime.model.TrainingZone;
 import com.tritime.repository.TrainingZoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -83,10 +83,9 @@ public class TrainingZoneController {
             zone.setRunZ5Sec(updatedZone.getRunZ5Sec());
 
             return trainingZoneRepository.save(zone);
-        }).orElseGet(() -> {
-            updatedZone.setId(id);
-            return trainingZoneRepository.save(updatedZone);
-        });
+            
+        }).orElseThrow(() -> new RuntimeException("TrainingZone com id " + id + " não encontrada."));
+        
     }
 
     // --- Deletar zona ---
